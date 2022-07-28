@@ -11,28 +11,14 @@
 /* ************************************************************************** */
 
 #include "../includes/header_push_swap.h"
+#include <unistd.h>
 
 int main(int ac, char **av)
 {
-    Stack *a;
-    Stack *b;
-    Actions action;
-
-    a = (Stack *)malloc(sizeof(*a));
-    get_ints(av, a);
-    action = init();
-    
-    Stack *t;
-
-    t = a;
-    while(t->next != NULL)
-    {
-        ft_printf("%d\n", t->n);
-        t = t->next;
-    }
+    ft_printf("%s", combine("hello, ", "world"));
     return (0);
 }
 
 // gcc main.c   ../libft/libft.a   ../ft_printf/libftprintf.a
 
-//gcc push_swap/push_swap.c helpers/*.c libft/libft.a ft_printf/libftprintf.a
+//gcc push_swap/push_swap.c helpers/*.c format_parsing/*.c libft/libft.a ft_printf/libftprintf.a

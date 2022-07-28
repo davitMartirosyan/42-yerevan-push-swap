@@ -51,6 +51,8 @@ void rrb(void);
 void rrr(void);
 
 void get_ints(char **av, Stack *a);
+void stack_nums(char **av);
+char *combine(char const *dst, char const *src);
 Actions init(void);
 
 #endif

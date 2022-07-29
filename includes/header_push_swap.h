@@ -51,8 +51,9 @@ void rrb(void);
 void rrr(void);
 
 void get_ints(char **av, Stack *a);
-void stack_nums(char **av);
-char *combine(char const *dst, char const *src);
+char *string(char **av, int str_size);
+int stack_nums_counter(char **av);
+char *combine(char *dst, char *src);
 Actions init(void);
 
 #endif

@@ -15,7 +15,7 @@
 
 int main(int ac, char **av)
 {
-    ft_printf("%s", combine("hello, ", "world"));
+    ft_printf("%s", string(av, stack_nums_counter(av)));
     return (0);
 }
 

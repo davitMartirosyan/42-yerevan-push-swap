@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jul 28 03:51:44 2022
+# Make data base, printed on Fri Jul 29 06:27:42 2022
 
 # Variables
 
@@ -87,7 +87,7 @@ MOTD_SHOWN = pam
 # automatic
 ^F = $(notdir $^)
 # environment
-SSH_CLIENT = 10.0.2.2 56144 4242
+SSH_CLIENT = 10.0.2.2 52256 4242
 # automatic
 ?F = $(notdir $?)
 # environment
@@ -113,7 +113,7 @@ _ = /home/dmartiro/.vscode-server/bin/3b889b090b5ad5793f524b5d1d39fda662b96a2a/n
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-VSCODE_IPC_HOOK_CLI = /run/user/1000/vscode-ipc-7094400e-d08d-4ec7-ae24-86ff8663d9b8.sock
+VSCODE_IPC_HOOK_CLI = /run/user/1000/vscode-ipc-4a815271-e89a-4a5e-ad68-b65974cbc7d8.sock
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -133,7 +133,7 @@ SUFFIXES :=
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
 # environment
-SSH_CONNECTION = 10.0.2.2 56144 10.0.2.15 4242
+SSH_CONNECTION = 10.0.2.2 52256 10.0.2.15 4242
 # variable set hash-table stats:
 # Load=62/1024=6%, Rehash=0, Collisions=1/91=1%
 
@@ -143,9 +143,9 @@ SSH_CONNECTION = 10.0.2.2 56144 10.0.2.15 4242
 
 # Directories
 
-# . (device 2056, inode 133330): 12 files, no impossibilities.
+# . (device 2056, inode 133330): 13 files, no impossibilities.
 
-# 12 files, no impossibilities in 1 directories.
+# 13 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -181,14 +181,15 @@ all:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 17 / storage = 144 B / avg = 8 B
-# current buf: size = 8162 B / used = 144 B / count = 17 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 18 / storage = 159 B / avg = 8 B
+# current buf: size = 8162 B / used = 159 B / count = 18 / avg = 8 B
 
-# strcache performance: lookups = 21 / hit rate = 19%
+# strcache performance: lookups = 22 / hit rate = 18%
 # hash-table stats:
-# Load=17/8192=0%, Rehash=0, Collisions=0/21=0%
-# Finished Make data base on Thu Jul 28 03:51:44 2022
-
+# Load=18/8192=0%, Rehash=0, Collisions=0/22=0%
  
 make: *** No rule to make target 'all'.  Stop.
 
+# Finished Make data base on Fri Jul 29 06:27:42 2022
+
+ 

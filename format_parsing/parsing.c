@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dmartiro <dmartiro@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/30 14:16:21 by dmartiro          #+#    #+#             */
+/*   Updated: 2022/07/30 15:32:16 by dmartiro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/header_push_swap.h"
 
 int stack_nums_counter(char **av)
@@ -14,47 +26,48 @@ int stack_nums_counter(char **av)
     return (charcount);
 }
 
-char *combine(char *dst, char *src)
+static int check_char(char c)
 {
-    int i;
-    int c;
-    int dstlen;
-    int srclen;
-    char *comb;
-
-    dstlen = ft_strlen(dst);
-    srclen = ft_strlen(src);
-    comb = malloc(sizeof(char) * (dstlen + srclen + 1));
-    i = -1;
-    while(dst[++i])
-        comb[i] = dst[i];
-    c = 0;
-    while(src[c])
-    {
-        if(src[c] == ',' || src[c] == ' ')
-        {
-            c++;
-            continue;
-        }
-        comb[i++] =  src[c++];
-    }
-    return (comb);
+    if((c < '0' || c > '9') && 
+        c != ' ' && c != '-')
+        return (0);
+    return (1);
 }
 
 char *string(char **av, int str_size)
 {
     int i;
     int c;
-    char *point;
+    int j;
+    char *str;
 
-    i = 1;
-    point = (char *)malloc(sizeof(char) * ((str_size * 2) + 1));
-    if(!point)
+    i = 0;
+    j = -1;
+    str = malloc(sizeof(char) * ((str_size * 2) + 1));
+    if(!str)
         return (NULL);
-    while(av[i])
+    while(av[++i])
     {
-        point = combine(point, av[i]);
-        i++;
+        c = -1;
+        
+        while(av[i][++c])
+        {
+            if(!check_char(av[i][c]))
+            {
+                free(str);
+                return (0);
+            }
+            str[++j] = av[i][c];
+        }
+        str[++j] = ' ';
     }
-    return (point);
+    str[j] = '\0';
+    return (str);
+}
+
+t_d *generate_int_arr(char *string)
+{
+    if(string == NULL)
+        ft_printf("Error");
+    return (0);
 }

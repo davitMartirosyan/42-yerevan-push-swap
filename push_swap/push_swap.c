@@ -6,7 +6,7 @@
 /*   By: dmartiro <dmartiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 12:29:13 by dmartiro          #+#    #+#             */
-/*   Updated: 2022/07/27 18:38:06 by dmartiro         ###   ########.fr       */
+/*   Updated: 2022/07/30 15:24:59 by dmartiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,12 @@
 
 int main(int ac, char **av)
 {
-    ft_printf("%s", string(av, stack_nums_counter(av)));
+    t_d *data;
+    Stack *a;
+    Stack *b;
+    
+    if(ac > 2)
+       data = generate_int_arr(string(av, stack_nums_counter(av)));
     return (0);
 }
 

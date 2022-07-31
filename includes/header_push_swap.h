@@ -6,7 +6,7 @@
 /*   By: dmartiro <dmartiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 15:20:43 by dmartiro          #+#    #+#             */
-/*   Updated: 2022/07/30 15:23:59 by dmartiro         ###   ########.fr       */
+/*   Updated: 2022/07/31 15:45:06 by dmartiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ typedef struct s_stack
     int n;
     int index;
     struct s_stack *next;
+    struct s_stack *prev;
 } Stack;
+
 
 typedef struct s_actions
 {
@@ -38,11 +40,11 @@ typedef struct s_actions
     void (*rrr)(void);
 } Actions;
 
-typedef struct s_d
+typedef struct s_important
 {
-    int len;
-    int *stack_nums;  
-} t_d;
+    int size;
+    char *collection;
+} t_important;
 
 void pa(void);
 void pb(void);
@@ -57,14 +59,13 @@ void rrb(void);
 void rrr(void);
 
 void get_ints(char **av, Stack *a);
-char *string(char **av, int str_size);
-int stack_nums_counter(char **av);
-char *combine(char *dst, char *src);
 
-t_d *generate_int_arr(char *string);
-
-Actions init(void);
+void stack_nums_counter(char **av, t_important *data);
+void collect(char **av, t_important *data);
+void store(Stack *a, t_important *data);
 
 int errno(void);
+
+Actions init(void);
 
 #endif

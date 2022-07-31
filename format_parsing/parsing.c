@@ -6,13 +6,13 @@
 /*   By: dmartiro <dmartiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 14:16:21 by dmartiro          #+#    #+#             */
-/*   Updated: 2022/07/30 15:32:16 by dmartiro         ###   ########.fr       */
+/*   Updated: 2022/07/31 15:44:52 by dmartiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header_push_swap.h"
 
-int stack_nums_counter(char **av)
+void stack_nums_counter(char **av, t_important *data)
 {
     int i;
     int charcount;
@@ -23,18 +23,21 @@ int stack_nums_counter(char **av)
     charcount = 0;
     while(av[++i])
         charcount += ft_strlen(av[i]);
-    return (charcount);
+    data->size = charcount;
 }
 
-static int check_char(char c)
+static int check_char(char c, t_important *data)
 {
     if((c < '0' || c > '9') && 
         c != ' ' && c != '-')
+    {
+        data->collection = NULL;       
         return (0);
+    }
     return (1);
 }
 
-char *string(char **av, int str_size)
+void collect(char **av, t_important *data)
 {
     int i;
     int c;
@@ -43,31 +46,45 @@ char *string(char **av, int str_size)
 
     i = 0;
     j = -1;
-    str = malloc(sizeof(char) * ((str_size * 2) + 1));
-    if(!str)
-        return (NULL);
-    while(av[++i])
+    str = malloc(sizeof(char) * ((data->size * 2) + 1));
+    if (!str)
+        return ;
+    while (av[++i])
     {
         c = -1;
-        
-        while(av[i][++c])
+        while (av[i][++c])
         {
-            if(!check_char(av[i][c]))
+            if (!check_char(av[i][c], data))
             {
                 free(str);
-                return (0);
+                return ;
             }
             str[++j] = av[i][c];
         }
         str[++j] = ' ';
     }
     str[j] = '\0';
-    return (str);
+    data->collection = str;
+    free(str);
 }
 
-t_d *generate_int_arr(char *string)
+void store(Stack *a, t_important *data)
 {
-    if(string == NULL)
-        ft_printf("Error");
-    return (0);
+    int i;
+    char **collection_of_ints;
+    Stack *tmp;
+
+    tmp = a;
+    
+    collection_of_ints = ft_split(data->collection, ' ');
+    i = 0;
+    while(collection_of_ints[i])
+    {
+        tmp->n = ft_atoi(collection_of_ints[i]);
+        tmp->index = i;
+        tmp->next = malloc(sizeof(Stack));
+        tmp = tmp->next;
+        i++;   
+    }
+    tmp->next = NULL;
 }

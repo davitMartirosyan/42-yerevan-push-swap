@@ -6,7 +6,7 @@
 /*   By: dmartiro <dmartiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 12:29:13 by dmartiro          #+#    #+#             */
-/*   Updated: 2022/07/31 15:53:24 by dmartiro         ###   ########.fr       */
+/*   Updated: 2022/08/13 05:37:56 by dmartiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,13 @@ int main(int ac, char **av)
     collect(av, data);
     if(!data->collection)
         errno();
-    store(a, data); // store numbers in stack a
-    ft_printf("%d", a->n);
-    // stack_nums_counter().collect().store();
+    __collecting_ints(data);
+    if(is_sorted(data->collection_of_ints, data->length))
+        return (0);
+    a = malloc(sizeof(*a));
+    b = malloc(sizeof(*b));
+    store(a, data);
+    
     return (0);
 }
 

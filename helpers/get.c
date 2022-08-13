@@ -6,31 +6,48 @@
 /*   By: dmartiro <dmartiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 12:28:12 by dmartiro          #+#    #+#             */
-/*   Updated: 2022/07/31 15:27:06 by dmartiro         ###   ########.fr       */
+/*   Updated: 2022/08/13 06:22:23 by dmartiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header_push_swap.h"
 
-void get_ints(char **av, Stack *a)
+void __collecting_ints(t_important *data)
 {
     int i;
-    int index;
-    Stack *tmp;
+    int c;
+    int pos;
+    int max;
     
-    i = 1;
-    index = 0;
-    tmp = a;
-    while(av[i])
-    {
-        tmp->n = ft_atoi(av[i]);
-        tmp->index = index;
-        tmp->next = (Stack *)malloc(sizeof(*tmp));
-        tmp = tmp->next;
+    i = 0;
+    data->split = ft_split(data->collection, ' '); 
+    while(data->split[i])
         i++;
-        index++;
+    data->length = i;
+    data->collection_of_ints = malloc(sizeof(int) * (i + 0));
+    i = -1;
+    while(data->split[++i])
+        data->collection_of_ints[i] = ft_atoi(data->split[i]);
+    i = data->length - 1;
+    c = 0;
+    pos = 0;
+    max = 0;
+    while(c <= i)
+    {
+        
+        c++;
+        pos++;
     }
-    tmp->next = NULL;
+}
+
+int is_sorted(int *ints, int len)
+{
+    if(len == 1 || len == 0)
+        return (1);
+    if(ints[len - 1] < ints[len - 2])
+        return (0);
+    
+    return is_sorted(ints, len - 1);
 }
 
 Actions init(void)

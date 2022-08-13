@@ -6,7 +6,7 @@
 /*   By: dmartiro <dmartiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 15:20:43 by dmartiro          #+#    #+#             */
-/*   Updated: 2022/07/31 15:45:06 by dmartiro         ###   ########.fr       */
+/*   Updated: 2022/08/13 05:31:52 by dmartiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ typedef struct s_stack
 
 typedef struct s_actions
 {
-    void (*pa)(void);
-    void (*pb)(void);
-    void (*sa)(void);
-    void (*sb)(void);
-    void (*ss)(void);
-    void (*ra)(void);
+    void (*pa)(Stack **a, Stack **b);
+    void (*pb)(Stack **a, Stack **b);
+    void (*sa)(Stack **a, Stack *x);
+    void (*sb)(Stack **b, Stack *x);
+    void (*ss)(Stack **a, Stack *x, Stack **b, Stack *y);
+    void (*ra)(Stack **a);
     void (*rb)(void);
     void (*rr)(void);
     void (*rra)(void);
@@ -43,29 +43,39 @@ typedef struct s_actions
 typedef struct s_important
 {
     int size;
+    int length;
+    int  *collection_of_ints;
     char *collection;
+    char **split;
 } t_important;
 
-void pa(void);
-void pb(void);
-void sa(void);
-void sb(void);
-void ss(void);
-void ra(void);
+
+Actions init(void);
+
+//parser functions
+void stack_nums_counter(char **av, t_important *data);
+void collect(char **av, t_important *data);
+void store(Stack *a, t_important *data);
+
+//Helpers
+void __collecting_ints(t_important *data);
+int is_sorted(int *ints, int len);
+
+//Error functions
+int errno(void);
+
+//sorting algorithm functions
+void raddix(Stack **a, Stack **b, t_important *data, Actions action);
+void pa(Stack **a, Stack **b);
+void pb(Stack **a, Stack **b);
+void sa(Stack **a, Stack *x);
+void sb(Stack **b, Stack *x);
+void ss(Stack **a, Stack *x, Stack **b, Stack *y);
+void ra(Stack **a);
 void rb(void);
 void rr(void);
 void rra(void);
 void rrb(void);
 void rrr(void);
-
-void get_ints(char **av, Stack *a);
-
-void stack_nums_counter(char **av, t_important *data);
-void collect(char **av, t_important *data);
-void store(Stack *a, t_important *data);
-
-int errno(void);
-
-Actions init(void);
 
 #endif

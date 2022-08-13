@@ -6,25 +6,40 @@
 /*   By: dmartiro <dmartiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 16:05:03 by dmartiro          #+#    #+#             */
-/*   Updated: 2022/07/27 16:12:07 by dmartiro         ###   ########.fr       */
+/*   Updated: 2022/08/13 05:03:31 by dmartiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header_push_swap.h"
 
-void pa(void)
+void pa(Stack **a, Stack **b)
 {
-    ft_printf("Push A\n");
+    Stack *t;
+    if(*b == NULL)
+        return;
+    t = *b;
+    *b = (*b)->next;
+    t->next = *a;
+    *a = t;
+    ft_printf("pa\n");
 }
 
-void pb(void)
+void pb(Stack **a, Stack **b)
 {
-    ft_printf("Push B\n");
+    Stack *t;
+    
+    if(*a == NULL)
+        return ;
+    t = *a;
+    *a = (*a)->next;
+    t->next = *b;
+    *b = t;
+    ft_printf("pb\n");   
 }
 
-void ra(void)
+void ra(Stack **a)
 {
-    ft_printf("Rotate A\n");
+   return ;
 }
 
 void rb(void)

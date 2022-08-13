@@ -6,7 +6,7 @@
 /*   By: dmartiro <dmartiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 14:16:21 by dmartiro          #+#    #+#             */
-/*   Updated: 2022/07/31 15:44:52 by dmartiro         ###   ########.fr       */
+/*   Updated: 2022/08/13 04:28:13 by dmartiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void stack_nums_counter(char **av, t_important *data)
 {
     int i;
     int charcount;
-    char *str_of_nums;
-    char *tmp_buffer;
 
     i = 0;
     charcount = 0;
@@ -65,7 +63,6 @@ void collect(char **av, t_important *data)
     }
     str[j] = '\0';
     data->collection = str;
-    free(str);
 }
 
 void store(Stack *a, t_important *data)
@@ -73,18 +70,17 @@ void store(Stack *a, t_important *data)
     int i;
     char **collection_of_ints;
     Stack *tmp;
-
-    tmp = a;
     
+    tmp = a;
     collection_of_ints = ft_split(data->collection, ' ');
     i = 0;
     while(collection_of_ints[i])
     {
         tmp->n = ft_atoi(collection_of_ints[i]);
         tmp->index = i;
-        tmp->next = malloc(sizeof(Stack));
+        tmp->next = malloc(sizeof(*tmp));
         tmp = tmp->next;
-        i++;   
+        i++;
     }
     tmp->next = NULL;
 }

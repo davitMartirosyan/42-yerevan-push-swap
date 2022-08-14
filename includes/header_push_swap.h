@@ -6,7 +6,7 @@
 /*   By: dmartiro <dmartiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 15:20:43 by dmartiro          #+#    #+#             */
-/*   Updated: 2022/08/13 05:31:52 by dmartiro         ###   ########.fr       */
+/*   Updated: 2022/08/14 04:39:40 by dmartiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 typedef struct s_stack
 {
     int n;
-    int index;
     struct s_stack *next;
     struct s_stack *prev;
 } Stack;
@@ -59,7 +58,11 @@ void store(Stack *a, t_important *data);
 
 //Helpers
 void __collecting_ints(t_important *data);
+void __sorted__indacies(t_important *data);
+void ___bubble___(int *arrtmp, int length);
+void __store__(t_important *data);
 int is_sorted(int *ints, int len);
+int __repeats__(t_important *data);
 
 //Error functions
 int errno(void);

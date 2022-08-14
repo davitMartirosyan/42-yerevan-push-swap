@@ -6,7 +6,7 @@
 /*   By: dmartiro <dmartiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 14:16:21 by dmartiro          #+#    #+#             */
-/*   Updated: 2022/08/13 04:28:13 by dmartiro         ###   ########.fr       */
+/*   Updated: 2022/08/14 04:51:44 by dmartiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,19 +68,15 @@ void collect(char **av, t_important *data)
 void store(Stack *a, t_important *data)
 {
     int i;
-    char **collection_of_ints;
     Stack *tmp;
-    
+
     tmp = a;
-    collection_of_ints = ft_split(data->collection, ' ');
-    i = 0;
-    while(collection_of_ints[i])
+    i = -1;
+    while(++i < data->length)
     {
-        tmp->n = ft_atoi(collection_of_ints[i]);
-        tmp->index = i;
-        tmp->next = malloc(sizeof(*tmp));
+        tmp->n = data->collection_of_ints[i];
+        tmp->next = malloc(sizeof(*a));
         tmp = tmp->next;
-        i++;
     }
     tmp->next = NULL;
 }

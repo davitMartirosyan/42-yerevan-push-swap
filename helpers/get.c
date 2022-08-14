@@ -6,39 +6,11 @@
 /*   By: dmartiro <dmartiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 12:28:12 by dmartiro          #+#    #+#             */
-/*   Updated: 2022/08/13 06:22:23 by dmartiro         ###   ########.fr       */
+/*   Updated: 2022/08/14 02:36:02 by dmartiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header_push_swap.h"
-
-void __collecting_ints(t_important *data)
-{
-    int i;
-    int c;
-    int pos;
-    int max;
-    
-    i = 0;
-    data->split = ft_split(data->collection, ' '); 
-    while(data->split[i])
-        i++;
-    data->length = i;
-    data->collection_of_ints = malloc(sizeof(int) * (i + 0));
-    i = -1;
-    while(data->split[++i])
-        data->collection_of_ints[i] = ft_atoi(data->split[i]);
-    i = data->length - 1;
-    c = 0;
-    pos = 0;
-    max = 0;
-    while(c <= i)
-    {
-        
-        c++;
-        pos++;
-    }
-}
 
 int is_sorted(int *ints, int len)
 {

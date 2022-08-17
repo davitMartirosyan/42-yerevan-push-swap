@@ -6,7 +6,7 @@
 /*   By: dmartiro <dmartiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 15:20:43 by dmartiro          #+#    #+#             */
-/*   Updated: 2022/08/14 04:39:40 by dmartiro         ###   ########.fr       */
+/*   Updated: 2022/08/17 16:28:05 by dmartiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_actions
     void (*sb)(Stack **b, Stack *x);
     void (*ss)(Stack **a, Stack *x, Stack **b, Stack *y);
     void (*ra)(Stack **a);
-    void (*rb)(void);
+    void (*rb)(Stack **b);
     void (*rr)(void);
     void (*rra)(void);
     void (*rrb)(void);
@@ -46,6 +46,8 @@ typedef struct s_important
     int  *collection_of_ints;
     char *collection;
     char **split;
+    int a_len;
+    int b_len;
 } t_important;
 
 
@@ -75,10 +77,10 @@ void sa(Stack **a, Stack *x);
 void sb(Stack **b, Stack *x);
 void ss(Stack **a, Stack *x, Stack **b, Stack *y);
 void ra(Stack **a);
-void rb(void);
+void rb(Stack **b);
 void rr(void);
 void rra(void);
 void rrb(void);
 void rrr(void);
-
+int check_stack_length(Stack *stack);
 #endif

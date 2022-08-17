@@ -6,7 +6,7 @@
 /*   By: dmartiro <dmartiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 16:10:24 by dmartiro          #+#    #+#             */
-/*   Updated: 2022/07/27 16:16:26 by dmartiro         ###   ########.fr       */
+/*   Updated: 2022/08/17 15:47:35 by dmartiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,19 @@ void rrb(void)
 void rrr(void)
 {
     ft_printf("Rotate Reverse A & B the same time\n");
+}
+
+int check_stack_length(Stack *stack)
+{
+    Stack *t;
+    int i;
+
+    t = stack;
+    i = -1;
+    while(t != NULL)
+    {
+        t = t->next;
+        ++i;
+    }
+    return (i);
 }

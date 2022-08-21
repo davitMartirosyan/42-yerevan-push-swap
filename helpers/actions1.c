@@ -39,24 +39,29 @@ void pb(Stack **a, Stack **b)
 
 void ra(Stack **a)
 {
-    Stack *first;
-    Stack *last;
+    Stack *first = *a;
+    Stack *last = *a;
     if(check_stack_length(*a) <= 1)
         return ;
-
-    first = *a;
-    last = *a;
     while(last->next != NULL)
         last = last->next;
     *a = first->next;
     first->next = NULL;
     last->next = first;
-    return ;
+    ft_printf("ra\n");
 }
+
 
 void rb(Stack **b)
 {
+    Stack *first = *b;
+    Stack *last = *b;
     if(check_stack_length(*b) <= 1)
         return ;
+    while(last->next != NULL)
+        last = last->next;
+    *b = first->next;
+    first->next = NULL;
+    last->next = first;
     ft_printf("rb\n");
 }

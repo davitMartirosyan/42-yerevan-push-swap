@@ -79,3 +79,22 @@
     // action.ss(a, (*a)->next, b, (*b)->next);         // OK
     // action.pb(a, b);                                 // OK
 // raddix(&a, &b, data, action);
+
+// Stack *k;
+//     k = malloc(sizeof(Stack));
+//     k->n = 4;
+//     k->next = malloc(sizeof(Stack));
+//     k->next->n = 1;
+//     k->next->next = malloc(sizeof(Stack));
+//     k->next->next->n = 0;
+//     k->next->next->next = malloc(sizeof(Stack));
+//     k->next->next->next->n = 2;
+//     k->next->next->next->next = NULL;
+//    Stack *tmp = k;
+//    //  ft_printf("\n");
+//    action.ra(&tmp);
+//    while(tmp != NULL)
+//    {
+//       ft_printf("%d ", tmp->n);
+//       tmp = tmp->next;
+//    }

@@ -12,12 +12,17 @@
 
 #include "../includes/header_push_swap.h"
 
-void raddix(Stack **a, Stack **b, t_important *data, Actions action)
+void __sort_a__(Stack **a, Stack **b, t_important *data, Actions action)
 {
-//    action.ra(a);
-   while((*a)->next != NULL)
+   action.ra(a);
+   // action.ra(a);
+   Stack *tmp = *a;
+   // ft_printf("\n");
+   while(tmp != NULL)
    {
-       ft_printf("%d ", (*a)->n);
-       *a = (*a)->next;
+      ft_printf("%d ", tmp->n);
+      tmp = tmp->next;
    }
+   
+//  
 }

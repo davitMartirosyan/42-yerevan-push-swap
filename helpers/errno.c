@@ -12,8 +12,8 @@
 
 #include "../includes/header_push_swap.h"
 
-int errno(void)
+int errno(char *err)
 {
-    ft_printf("Error");
-    exit(0);
+    ft_printf("%s\n", err);
+    exit(3);
 }

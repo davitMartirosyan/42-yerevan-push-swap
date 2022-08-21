@@ -56,7 +56,7 @@ Actions init(void);
 //parser functions
 void stack_nums_counter(char **av, t_important *data);
 void collect(char **av, t_important *data);
-void store(Stack *a, t_important *data);
+void store(Stack **a, t_important *data);
 
 //Helpers
 void __collecting_ints(t_important *data);
@@ -65,12 +65,12 @@ void ___bubble___(int *arrtmp, int length);
 void __store__(t_important *data);
 int is_sorted(int *ints, int len);
 int __repeats__(t_important *data);
-
+int __check__collection(t_important *data);
 //Error functions
-int errno(void);
+int errno(char *err);
 
 //sorting algorithm functions
-void raddix(Stack **a, Stack **b, t_important *data, Actions action);
+void __sort_a__(Stack **a, Stack **b, t_important *data, Actions action);
 void pa(Stack **a, Stack **b);
 void pb(Stack **a, Stack **b);
 void sa(Stack **a, Stack *x);

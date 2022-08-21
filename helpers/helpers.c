@@ -26,7 +26,7 @@ void __store__(t_important *data)
     data->split = ft_split(data->collection, ' '); 
     while(data->split[++i]);
     data->length = i;
-    data->collection_of_ints = malloc(sizeof(int) * (i + 0));
+    data->collection_of_ints = malloc(sizeof(int) * (i + 1));
     i = -1;
     while(data->split[++i])
         data->collection_of_ints[i] = ft_atoi(data->split[i]);
@@ -69,4 +69,15 @@ int __repeats__(t_important *data)
                 return 1;
     }
     return (0);
+}
+
+int __check__collection(t_important *data)
+{
+    if(!data->collection)
+        errno("[Collection Error] : NaN");
+    if(__repeats__(data))
+        errno("[Collection Error] : Same Num");
+    if(is_sorted(data->collection_of_ints, data->length))
+        ft_printf("is sorted\n");
+    return (1);
 }

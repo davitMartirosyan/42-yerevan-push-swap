@@ -65,18 +65,19 @@ void collect(char **av, t_important *data)
     data->collection = str;
 }
 
-void store(Stack *a, t_important *data)
+void store(Stack **a, t_important *data)
 {
     int i;
-    Stack *tmp;
 
-    tmp = a;
-    i = -1;
-    while(++i < data->length)
+    i = 0;
+    // while(*a) a = &((*a)->next);
+
+    while(i < data->length)
     {
-        tmp->n = data->collection_of_ints[i];
-        tmp->next = malloc(sizeof(*a));
-        tmp = tmp->next;
+        *a = malloc(sizeof **a);
+        (*a)->n = data->collection_of_ints[i];
+        a = &(*a)->next;
+        i++;
     }
-    tmp->next = NULL;
+    *a = NULL;
 }

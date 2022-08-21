@@ -25,18 +25,13 @@ int main(int ac, char **av)
     data = malloc(sizeof(*data));
     stack_nums_counter(av, data);
     collect(av, data);
-    if(!data->collection)
-        errno();
-    if(__repeats__(data))
-        errno();
-    if(is_sorted(data->collection_of_ints, data->length))
-        ft_printf("is sorted\n");
+    __check__collection(data);
     __collecting_ints(data);
     action = init();
-    a = malloc(sizeof(*a));
-    b = malloc(sizeof(*b));
-    store(a, data);
-    raddix(&a, &b, data, action);
+    a = NULL;
+    b = NULL;
+    store(&a, data);
+    __sort_a__(&a, &b, data, action);
     return (0);
 }
 

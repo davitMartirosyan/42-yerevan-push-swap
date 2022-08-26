@@ -80,21 +80,30 @@
     // action.pb(a, b);                                 // OK
 // raddix(&a, &b, data, action);
 
-// Stack *k;
-//     k = malloc(sizeof(Stack));
-//     k->n = 4;
-//     k->next = malloc(sizeof(Stack));
-//     k->next->n = 1;
-//     k->next->next = malloc(sizeof(Stack));
-//     k->next->next->n = 0;
-//     k->next->next->next = malloc(sizeof(Stack));
-//     k->next->next->next->n = 2;
-//     k->next->next->next->next = NULL;
-//    Stack *tmp = k;
-//    //  ft_printf("\n");
-//    action.ra(&tmp);
-//    while(tmp != NULL)
+// action.pb(a, b);
+//    action.pb(a, b);
+//    action.pb(a, b);
+//    action.rrr(a, b);
+//    while((*a) != NULL)
 //    {
-//       ft_printf("%d ", tmp->n);
-//       tmp = tmp->next;
+//        ft_printf("%d ", (*a)->n);
+//        *a = (*a)->next;
 //    }
+//     ft_printf("\n");
+//    while((*b) != NULL)
+//    {
+//        ft_printf("%d ", (*b)->n);
+//        *b = (*b)->next;
+//    }
+
+if(data->length == 3)
+        tripple(*a);
+    else if(data->length == 5)
+        pentan(a, b);
+    else if(data->length <= 100)
+        chuncks = data->length / 5;
+    else if(data->length <= 500)
+        chuncks = data->length / 11;
+
+        //Butterfly structure in Stack B
+    // b_fly(a, b, data, action);

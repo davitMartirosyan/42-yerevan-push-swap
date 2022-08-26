@@ -6,7 +6,7 @@
 /*   By: dmartiro <dmartiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 02:35:43 by dmartiro          #+#    #+#             */
-/*   Updated: 2022/08/14 03:55:54 by dmartiro         ###   ########.fr       */
+/*   Updated: 2022/08/22 15:46:13 by dmartiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void __store__(t_important *data)
     data->split = ft_split(data->collection, ' '); 
     while(data->split[++i]);
     data->length = i;
-    data->collection_of_ints = malloc(sizeof(int) * (i + 1));
+    data->collection_of_ints = malloc(sizeof(int) * (i + 0));
     i = -1;
     while(data->split[++i])
         data->collection_of_ints[i] = ft_atoi(data->split[i]);

@@ -6,7 +6,7 @@
 /*   By: dmartiro <dmartiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 12:28:12 by dmartiro          #+#    #+#             */
-/*   Updated: 2022/08/14 02:36:02 by dmartiro         ###   ########.fr       */
+/*   Updated: 2022/08/26 02:31:19 by dmartiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,41 @@ int is_sorted(int *ints, int len)
         return (0);
     
     return is_sorted(ints, len - 1);
+}
+
+void b_fly(Stack **a, Stack **b, t_important *data, Actions action)
+{
+    int idx_c;
+    
+    idx_c = 0;
+    while((*a) != NULL)
+    {
+        if((*a)->n <= idx_c)
+        {
+            action.pb(a, b);
+            action.rb(b);
+            idx_c++;
+        }
+        else if((*a)->n <= idx_c + 3)
+        {
+            action.pb(a, b);
+            idx_c++;
+        }
+        else
+            action.ra(a);
+    }
+}
+
+void tripple(Stack **a)
+{
+    if((*a)->n > (*a)->next->n &&
+        (*a)->n < (*a)->next->next->n)
+        sa(a, (*a)->next);
+  
+}
+void pentan(Stack **a, Stack **b)
+{
+    return ;
 }
 
 Actions init(void)

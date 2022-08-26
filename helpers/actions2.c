@@ -6,15 +6,17 @@
 /*   By: dmartiro <dmartiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 16:06:07 by dmartiro          #+#    #+#             */
-/*   Updated: 2022/08/08 02:50:22 by dmartiro         ###   ########.fr       */
+/*   Updated: 2022/08/22 11:55:57 by dmartiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header_push_swap.h"
 
-void rr(void)
+void rr(Stack **a, Stack **b)
 {
-    ft_printf("Rotate A & B the same time\n");
+    ra(a);
+    rb(b);
+    ft_printf("rr\n");
 }
 
 void sa(Stack **a, Stack *x)

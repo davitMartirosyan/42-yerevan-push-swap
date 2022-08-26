@@ -6,38 +6,60 @@
 /*   By: dmartiro <dmartiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 16:10:24 by dmartiro          #+#    #+#             */
-/*   Updated: 2022/08/17 15:47:35 by dmartiro         ###   ########.fr       */
+/*   Updated: 2022/08/22 13:50:04 by dmartiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header_push_swap.h"
 
-void rra(void)
+void rra(Stack **a)
 {
-    ft_printf("Rotate Reverse A\n");
+    Stack *pen;
+    Stack *last;
+    Stack *first;
+    
+    pen = *a;
+    last = *a;
+    first = *a;
+    while(pen->next->next != NULL) pen = pen->next;
+    while(last->next != NULL) last = last->next;
+    
+    last->next = first;
+    pen->next = NULL;
+    *a = last;
+    ft_printf("rra\n");
 }
 
-void rrb(void)
+void rrb(Stack **b)
 {
-    ft_printf("Rotate Reverse B\n");
+    Stack *pen;
+    Stack *last;
+    Stack *first;
+
+    pen = *b;
+    last = *b;
+    first = *b;
+    while(pen->next->next != NULL) pen = pen->next;
+    while(last->next != NULL) last = last->next;
+    
+    last->next = first;
+    pen->next = NULL;
+    *b = last;
+    ft_printf("rrb\n");
 }
 
-void rrr(void)
+void rrr(Stack **a, Stack **b)
 {
-    ft_printf("Rotate Reverse A & B the same time\n");
+    rra(a);
+    rrb(b);
+    ft_printf("rrr\n");
 }
 
-int check_stack_length(Stack *stack)
+Stack *ln(Stack **x)
 {
-    Stack *t;
-    int i;
+    Stack *ls;
 
-    t = stack;
-    i = -1;
-    while(t != NULL)
-    {
-        t = t->next;
-        ++i;
-    }
-    return (i);
+    ls = *x;
+    while(ls->next != NULL) ls = ls->next;
+    return (ls);
 }

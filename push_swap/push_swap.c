@@ -6,7 +6,7 @@
 /*   By: dmartiro <dmartiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 12:29:13 by dmartiro          #+#    #+#             */
-/*   Updated: 2022/08/17 16:29:51 by dmartiro         ###   ########.fr       */
+/*   Updated: 2022/08/22 12:54:35 by dmartiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main(int ac, char **av)
     a = NULL;
     b = NULL;
     store(&a, data);
-    __sort_a__(&a, &b, data, action);
+    a_b_sort(&a, &b, data, action);
     return (0);
 }
 

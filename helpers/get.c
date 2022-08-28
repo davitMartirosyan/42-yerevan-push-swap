@@ -45,18 +45,6 @@ void b_fly(Stack **a, Stack **b, t_important *data, Actions action)
     }
 }
 
-void tripple(Stack **a)
-{
-    if((*a)->n > (*a)->next->n &&
-        (*a)->n < (*a)->next->next->n)
-        sa(a, (*a)->next);
-  
-}
-void pentan(Stack **a, Stack **b)
-{
-    return ;
-}
-
 Actions init(void)
 {   
     Actions *init;

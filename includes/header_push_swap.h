@@ -13,6 +13,15 @@
 #ifndef HEADER_PUSH_SWAP_H
 # define HEADER_PUSH_SWAP_H
 
+# define KNRM  "\x1B[0m"
+# define KRED  "\x1B[31m"
+# define KGRN  "\x1B[32m"
+# define KYEL  "\x1B[33m"
+# define KBLU  "\x1B[34m"
+# define KMAG  "\x1B[35m"
+# define KCYN  "\x1B[36m"
+# define KWHT  "\x1B[37m"
+
 # include "../libft/libft.h"
 # include "../ft_printf/include/ft_printf.h"
 
@@ -70,8 +79,6 @@ int check_stack_length(Stack *stack);
 int errno(char *errmsg);
 
 //sorting algorithm functions
-void pentan(Stack **a, Stack **b);
-void tripple(Stack **a);
 void a_b_sort(Stack **a, Stack **b, t_important *data, Actions action);
 void pa(Stack **a, Stack **b);
 void pb(Stack **a, Stack **b);
@@ -86,4 +93,11 @@ void rrb(Stack **b);
 void rrr(Stack **a, Stack **b);
 void b_fly(Stack **a, Stack **b, t_important *data, Actions action);
 Stack *ln(Stack **x);
+
+//sorting parts
+void tripple(Stack **a);               //              \\ 3
+void quadruple(Stack **a, Stack **b); //                \\ 4
+void quintuple(Stack **a, Stack **b);//                  \\ 5
+void centuple(Stack **a, Stack **b, t_important *data); //\\ 100
+void fentuple(Stack **a, Stack **b,t_important *data); //  \\ 500
 #endif
